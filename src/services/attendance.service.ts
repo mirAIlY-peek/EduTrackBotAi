@@ -1,6 +1,7 @@
 import axios from 'axios';
 const https = require('https');
 import * as cheerio from 'cheerio';
+import { config } from '../config/config';
 
 export class AttendanceService {
     private baseUrl: string;
@@ -12,13 +13,13 @@ export class AttendanceService {
     private mod: string;
 
     constructor() {
-        this.baseUrl = 'https://my.sdu.edu.kz/loginAuth.php'; // URL для авторизации
-        this.login = '230103089';
-        this.password = 'Pr0gramm1st2005';
+        this.baseUrl = config.sduBaseUrl;
+        this.login = config.sduLogin;
+        this.password = config.sduPassword;
         this.modstring = '';
-        this.LogIn= 'Log in';
-        this.url = 'https://my.sdu.edu.kz/index.php?mod=ejurnal'
-        this.mod = 'ejurnal'
+        this.LogIn= config.logIn;
+        this.url = config.sduBaseUrl;
+        this.mod = config.mod;
     }
 
     async checkAttendance(): Promise<any> {

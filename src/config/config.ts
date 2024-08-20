@@ -7,5 +7,8 @@ export const config = {
     openaiApiKey: process.env.OPENAI_API,
     sduLogin: process.env.SDU_LOGIN,
     sduPassword: process.env.SDU_PASSWORD,
-    sduBaseUrl: 'https://my.sdu.edu.kz/',
+    sduBaseUrl: process.env.SDU_BASE_URL,
+    sduScheduleUrl: process.env.SDU_SCHED,
+    logIn: process.env.LOG_IN,
+    mod:process.env.MOD
 };
