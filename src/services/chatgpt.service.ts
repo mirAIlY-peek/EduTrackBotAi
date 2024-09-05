@@ -18,7 +18,7 @@ export class ChatGPTService {
         try {
             const completion = await this.openai.chat.completions.create({
                 model: "gpt-4o-mini",
-                messages: [{ role: "user",
+                messages: [{ role: "assistant",
                     content: prompt
                 }],
             });

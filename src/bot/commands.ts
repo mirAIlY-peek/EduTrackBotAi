@@ -44,8 +44,6 @@ export function setupCommands(bot: Telegraf) {
     bot.hears('🔐 Выйти из аккаунта', (ctx) => {
         const userId = ctx.from?.id;
         if (!userId) return;
-
-        // Удаляем сохраненные данные авторизации
         delete userSessions[userId].login;
         delete userSessions[userId].password;
         ctx.reply('Вы успешно вышли из аккаунта. Введите ваш логин для повторной авторизации.');
